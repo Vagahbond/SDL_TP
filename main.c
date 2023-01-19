@@ -14,6 +14,24 @@ int main(int argc, char const *argv[])
 
     Window *window = create_window();
 
+    int quit = 0;
+    SDL_Event event;
+
+    while (!quit)
+    {
+        while (SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
+            {
+                quit = 1;
+            }
+        }
+
+        SDL_RenderClear(window->renderer);
+
+
+        SDL_RenderPresent(window->renderer);
+    }
 
     destroy_window(window);
 
