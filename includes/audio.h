@@ -1,3 +1,6 @@
+#ifndef AUDIO_H
+#define AUDIO_H
+
 #include <SDL2/SDL.h>
 
 typedef struct {
@@ -10,3 +13,5 @@ typedef struct {
 AudioHandle *create_audio_handle(SDL_RWops *file);
 
 void destroy_audio_handle(AudioHandle *handle);
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef WINDOW_H
+#define WINDOW_H
+
 #define SCREEN_WIDTH  1280
 #define SCREEN_HEIGHT 720
 #include <SDL2/SDL.h>
@@ -11,3 +14,5 @@ typedef struct {
 Window *create_window();
 
 void destroy_window(Window *window);
+
+#endif

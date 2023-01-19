@@ -3,6 +3,7 @@
 
 #include "includes/window.h"
 #include "includes/audio.h"
+#include "includes/pause_button.h"
 
 int main(int argc, char const *argv[])
 {
@@ -60,6 +61,9 @@ int main(int argc, char const *argv[])
         }
 
         SDL_RenderClear(window->renderer);
+
+        draw_pause_button(window, audio_handle);
+
         SDL_RenderPresent(window->renderer);
     }
 
