@@ -42,10 +42,24 @@ int main(int argc, char const *argv[])
             {
                 quit = 1;
             }
+            else if (event.type == SDL_KEYDOWN)
+            {
+                switch (event.key.keysym.sym)
+                {
+                case SDLK_SPACE:
+                    if (SDL_GetAudioDeviceStatus(audio_handle->device_id) == SDL_AUDIO_PLAYING)
+                        SDL_PauseAudioDevice(audio_handle->device_id, 1);
+                    else
+                        SDL_PauseAudioDevice(audio_handle->device_id, 0);
+                    break;
+
+                default:
+                    break;
+                }
+            }
         }
 
         SDL_RenderClear(window->renderer);
-
         SDL_RenderPresent(window->renderer);
     }
 
