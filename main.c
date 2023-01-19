@@ -49,6 +49,7 @@ int main(int argc, char const *argv[])
         SDL_RenderPresent(window->renderer);
     }
 
+    destroy_audio_handle(audio_handle);
     destroy_window(window);
 
     SDL_Quit();
